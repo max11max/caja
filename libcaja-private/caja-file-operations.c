@@ -955,6 +955,8 @@ init_common (gsize job_size,
 	CommonJob *common;
 	GdkScreen *screen;
 
+	/* expected warning with Clang static analyzer:
+	   Cast a region whose size is not a multiple of the destination type size */
 	common = g_malloc0 (job_size);
 
 	if (parent_window) {
